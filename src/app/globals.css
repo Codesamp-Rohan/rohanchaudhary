@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f5f4f1;
+  --ink: #141414;
+  --muted: #6f6f6b;
+  --border: #dedcd6;
+  --accent: #141414;
+  --accent-soft: rgba(20, 20, 20, 0.08);
+  --grid-line: rgba(20, 20, 20, 0.05);
+  --grid-line-hover: rgba(20, 20, 20, 0.1);
+  --glow: rgba(20, 20, 20, 0.07);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-instrument-serif);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.grid-cell {
+  border-right: 1px solid var(--grid-line);
+  border-bottom: 1px solid var(--grid-line);
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+
+.grid-cell--active {
+  background-color: var(--grid-line-hover);
+  transition: background-color 0.1s ease;
+}
+
+.site-shell {
+  background-image: radial-gradient(ellipse 70% 40% at 50% -10%,
+      var(--glow),
+      transparent 70%);
+  background-size: 100% 100%;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+a,
+button {
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+h5 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+h6 {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 400;
 }
