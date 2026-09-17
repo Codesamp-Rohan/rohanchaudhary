@@ -146,8 +146,9 @@ export default async function Home() {
           {SERVICES.map((service, index) => (
             <div
               key={service}
-              className="group relative flex min-h-[92px] flex-col justify-between gap-3 border border-border bg-paper p-3 transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lg"
+              className="group relative flex min-h-[92px] flex-col justify-between gap-3 border border-border bg-paper p-3 transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lg overflow-hidden"
             >
+              <span className="absolute w-6 h-6 -top-6 -right-6 transition-all duration-300 group-hover:top-0 group-hover:right-0 bg-black"></span>
               <span className="font-mono text-[10px] text-muted">
                 {String(index + 1).padStart(2, "0")}
               </span>

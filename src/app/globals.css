@@ -123,3 +123,35 @@ p {
   font-size: 13px;
   font-weight: 400;
 }
+
+@keyframes float-sticker {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes sway-sticker {
+  0% {
+    transform: rotate(-15deg);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: rotate(15deg);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+.floating-sticker {
+  animation: float-sticker 4.5s ease-in-out infinite;
+}
+
+.floating-sticker-inner {
+  animation: sway-sticker 1s infinite;
+}

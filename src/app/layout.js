@@ -2,6 +2,7 @@ import { Montserrat, Geist_Mono, Instrument_Serif } from "next/font/google";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import GridHoverLayer from "@/components/ui/GridHoverLayer";
+import FloatingStickers from "@/components/ui/FloatingStickers";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
     >
       <body className="flex min-h-full flex-col items-center bg-paper font-sans text-ink">
         <GridHoverLayer />
+        <FloatingStickers />
         <div className="site-shell flex w-full max-w-xl flex-1 flex-col border-l border-r border-border">
           <SiteHeader />
           <main className="flex flex-1 flex-col pb-32 sm:pb-20">
